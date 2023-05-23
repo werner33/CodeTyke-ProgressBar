@@ -3,6 +3,7 @@ import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
 import Intro from './components/intro/Intro';
 import LearningModule from './components/learningModule/LearningModule';
+import ProgressBar from './components/propgressBar/progressBar';
 
 import './styles/App.scss';
 
@@ -18,7 +19,10 @@ function App() {
         }
         
         { !gameStatus.loadIntro &&
-          <LearningModule setGameStatus={setGameStatus}/>
+         <div>
+            <ProgressBar setGameStatus={setGameStatus} width={50}/> 
+            <LearningModule setGameStatus={setGameStatus}/> 
+          </div>
         }
       </div>
       <Footer />
