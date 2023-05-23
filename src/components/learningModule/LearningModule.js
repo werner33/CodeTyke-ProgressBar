@@ -7,6 +7,8 @@ import './Styles.scss';
 const LearningModule = ({setGameStatus}) => {
   const [currentQuestionId, setCurrentQuestionId] = React.useState(0);
   const [quizData, setQuizData] = React.useState({});
+  const [width, setWidth] = React.useState(1);
+  
   let currentQuestion = quizData.questionArr ? quizData.questionArr[currentQuestionId]: {};
   React.useEffect(()=>{
     getQuizData();
@@ -23,14 +25,23 @@ const LearningModule = ({setGameStatus}) => {
       });
   }
 
+
   const handleSubmit=()=> {
     if(currentQuestionId < quizData.totalQuestions-1){
       setCurrentQuestionId(currentQuestionId+1);
+      console.log(width)
+      
+    //we want to increase progress to 25% when on question 1
+    //increase progress to 50% on question 2
+    //increase progress to 75% on question 3
+    //when at question 4 turn to home page
     } else {
       setCurrentQuestionId(0);
       setGameStatus({message: "Great Job! Play again.", loadIntro: true});
     }
+    setWidth(width + 25)
   }
+
   let possibleAnswers = [];
   if(currentQuestion.possibleAnswers){
     possibleAnswers = currentQuestion.possibleAnswers.map((answer, index) => {
@@ -41,6 +52,9 @@ const LearningModule = ({setGameStatus}) => {
 
   return (
     <div className="learningModule">
+      <div id='progressbar'>
+      <div id='bar' style={{width:width + '%'}} ></div>
+      </div>
       { currentQuestion.title &&
         <>
           <div className="learningModule--header">
