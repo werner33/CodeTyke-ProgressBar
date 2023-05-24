@@ -1,11 +1,13 @@
+@import '../../styles/utils/colors';
+
 .progressBar{
     width: 100%; 
     height: 1px; 
-    background-color: #cccc;
+    background-color: $elephant-paw;
 
     &--progress{
         height: 15px; 
-        background: #9c53fd; 
+        background: $barney; 
         border-radius: 30px;
         transition: 600ms linear;
         position: relative;

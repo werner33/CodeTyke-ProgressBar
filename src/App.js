@@ -9,7 +9,7 @@ import './styles/App.scss';
 
 function App() {
   const [gameStatus, setGameStatus] = React.useState({message: "Welcome", loadIntro: true});
-  const [addStatus, setAddStatus] = React.useState(0)
+  const [addProgress, setAddProgress] = React.useState(0)
 
   return (
     <div>
@@ -20,11 +20,11 @@ function App() {
         }
         
         { !gameStatus.loadIntro &&
-         <div>
-            <ProgressBar setGameStatus={setGameStatus} width={addStatus}/> 
+         <div className='StatusContainer'>
+            <ProgressBar setGameStatus={setGameStatus} width={addProgress}/> 
             <LearningModule setGameStatus={setGameStatus} 
-                            setAddStatus={setAddStatus} 
-                            addSatus={addStatus}/> 
+                            setAddProgress={setAddProgress} 
+                            addProgress={addProgress}/> 
           </div>
         }
       </div>
