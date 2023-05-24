@@ -4,7 +4,7 @@ import Button from '../button/Button';
 
 import './Styles.scss';
 
-const LearningModule = ({setGameStatus , setAddStatus, addSatus}) => {
+const LearningModule = ({setGameStatus , setAddStatus, addStatus}) => {
   const [currentQuestionId, setCurrentQuestionId] = React.useState(0);
   const [quizData, setQuizData] = React.useState({});
   let currentQuestion = quizData.questionArr ? quizData.questionArr[currentQuestionId]: {};
@@ -26,7 +26,7 @@ const LearningModule = ({setGameStatus , setAddStatus, addSatus}) => {
   const handleSubmit=()=> {
     if(currentQuestionId < quizData.totalQuestions-1){
       setCurrentQuestionId(currentQuestionId+1);
-      setAddStatus(addSatus + 25)
+      setAddStatus(addStatus + 25)
     } else {
       setCurrentQuestionId(0);
       setAddStatus(0);
