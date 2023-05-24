@@ -3,12 +3,13 @@ import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
 import Intro from './components/intro/Intro';
 import LearningModule from './components/learningModule/LearningModule';
-import ProgressBar from './components/propgressBar/progressBar';
+import ProgressBar from './components/progressBar/progressBar';
 
 import './styles/App.scss';
 
 function App() {
   const [gameStatus, setGameStatus] = React.useState({message: "Welcome", loadIntro: true});
+  const [addSatus, setAddStatus] = React.useState(0)
 
   return (
     <div>
@@ -20,8 +21,10 @@ function App() {
         
         { !gameStatus.loadIntro &&
          <div>
-            <ProgressBar setGameStatus={setGameStatus} width={50}/> 
-            <LearningModule setGameStatus={setGameStatus}/> 
+            <ProgressBar setGameStatus={setGameStatus} width={addSatus}/> 
+            <LearningModule setGameStatus={setGameStatus} 
+                            setAddStatus={setAddStatus} 
+                            addSatus={addSatus}/> 
           </div>
         }
       </div>
