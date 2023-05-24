@@ -46,8 +46,8 @@ const LearningModule = ({setGameStatus}) => {
 
   return (
     <div className="learningModule">
-      <div id='progressbar'>
-      <div id='bar' style={{width:width + '%'}} ></div>
+      <div className='learningModule--progressbar'>
+        <div className='learningModule--bar' style={{width:width + '%'}} ></div>
       </div>
       { currentQuestion.title &&
         <>

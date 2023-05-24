@@ -6,7 +6,7 @@ body{
   background-size: cover;
 }
 
-#progressbar {
+.learningModule--progressbar {
     width: 100%;
     background-color: #cccc;
     border-radius: 30px;
@@ -14,7 +14,7 @@ body{
     position: sticky;
 }
 
-#bar {
+.learningModule--bar {
   //width: 1%;
   height: 10px;
   float: left;
