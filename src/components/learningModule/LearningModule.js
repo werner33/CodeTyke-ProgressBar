@@ -29,12 +29,6 @@ const LearningModule = ({setGameStatus}) => {
   const handleSubmit=()=> {
     if(currentQuestionId < quizData.totalQuestions-1){
       setCurrentQuestionId(currentQuestionId+1);
-      console.log(width)
-      
-    //we want to increase progress to 25% when on question 1
-    //increase progress to 50% on question 2
-    //increase progress to 75% on question 3
-    //when at question 4 turn to home page
     } else {
       setCurrentQuestionId(0);
       setGameStatus({message: "Great Job! Play again.", loadIntro: true});
