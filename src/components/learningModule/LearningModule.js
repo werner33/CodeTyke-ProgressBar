@@ -12,7 +12,7 @@ const LearningModule = ({ setGameStatus }) => {
   let currentQuestion = quizData.questionArr
     ? quizData.questionArr[currentQuestionId]
     : {};
-  console.log(currentQuestion);
+
   React.useEffect(() => {
     getQuizData();
   }, []);
@@ -47,12 +47,13 @@ const LearningModule = ({ setGameStatus }) => {
 
   return (
     <div className="learningModule">
-      <ProgressBar
-        completed={(currentQuestionId / quizData.totalQuestions) * 100}
-        bgColor="#9C53FD"
-        animateOnRender={true}
-      />
-
+      <div className="learningModule--progressBar">
+        <ProgressBar
+          completed={(currentQuestionId / quizData.totalQuestions) * 100}
+          bgColor="#9C53FD"
+          animateOnRender={true}
+        />
+      </div>
       {currentQuestion.title && (
         <>
           <div className="learningModule--header">
