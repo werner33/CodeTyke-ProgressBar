@@ -1,7 +1,6 @@
 import React from "react";
 import SelectionBox from "../selectionBox/SelectionBox";
 import Button from "../button/Button";
-import ProgressBar from "@ramonak/react-progress-bar";
 
 import "./Styles.scss";
 
@@ -45,15 +44,18 @@ const LearningModule = ({ setGameStatus }) => {
     });
   }
 
+  const progressPercentage =
+    (currentQuestionId / quizData.totalQuestions) * 100;
+
   return (
     <div className="learningModule">
       <div className="learningModule--progressBar">
-        <ProgressBar
-          completed={(currentQuestionId / quizData.totalQuestions) * 100}
-          bgColor="#9C53FD"
-          animateOnRender={true}
-        />
+        <div
+          className="learningModule--progressBarCompletion"
+          style={{ width: progressPercentage + "%" }}
+        ></div>
       </div>
+
       {currentQuestion.title && (
         <>
           <div className="learningModule--header">

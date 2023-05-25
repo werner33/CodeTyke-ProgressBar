@@ -7,6 +7,22 @@
         text-align: center;
     }
 
+    &--progressBar {
+        width: 100%;
+        height: 30px;
+        background-color: white;
+        border: 2px solid $barney;
+        border-radius: 50px;
+    }
+
+    &--progressBarCompletion {
+        width: 1%;
+        height: inherit;
+        background-color: $barney;
+        border: inherit;
+        border-radius: 50px;
+    }
+
     &--title {
         margin: 25px 10px;
         color: $morning-sky;
