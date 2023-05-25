@@ -51,8 +51,14 @@ const LearningModule = ({ setGameStatus }) => {
     <div className="learningModule">
       <div className="learningModule--progressBar">
         <div
-          className="learningModule--progressBarCompletion"
-          style={{ width: progressPercentage + "%" }}
+          className={
+            currentQuestionId === 0
+              ? "learningModule--progressBarInitially"
+              : "learningModule--progressBarCompletion"
+          }
+          style={{
+            width: currentQuestionId > 0 ? progressPercentage + "%" : null,
+          }}
         ></div>
       </div>
 
