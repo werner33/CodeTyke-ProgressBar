@@ -16,15 +16,21 @@ function App() {
       <Navbar />
       <div id="mainWrapper">
         { gameStatus.loadIntro && 
-          <Intro setGameStatus={setGameStatus} gameStatus={gameStatus} />
+          <Intro setGameStatus={setGameStatus} 
+                 gameStatus={gameStatus} 
+                 setAddProgress={setAddProgress}  />
         }
         
         { !gameStatus.loadIntro &&
          <div className='StatusContainer'>
-            <ProgressBar setGameStatus={setGameStatus} width={addProgress}/> 
+            <ProgressBar setGameStatus={setGameStatus} 
+                         width={addProgress} 
+                         /> 
+
             <LearningModule setGameStatus={setGameStatus} 
                             setAddProgress={setAddProgress} 
-                            addProgress={addProgress}/> 
+                            addProgress={addProgress}
+                           /> 
           </div>
         }
       </div>

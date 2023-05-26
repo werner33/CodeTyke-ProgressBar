@@ -26,12 +26,14 @@ const LearningModule = ({setGameStatus , setAddProgress, addProgress}) => {
   const handleSubmit=()=> {
     if(currentQuestionId < quizData.totalQuestions-1){
       setCurrentQuestionId(currentQuestionId+1);
-      setAddProgress(addProgress + 25)
+ 
     } else {
       setCurrentQuestionId(0);
-      setAddProgress(0);
-      setGameStatus({message: "Great Job! Play again.", loadIntro: true});
+      setTimeout(() => {
+        setGameStatus({message: "Great Job! Play again.", loadIntro: true});
+      }, "1000");
     }
+    setAddProgress(addProgress + 25)
    
   }
   let possibleAnswers = [];
