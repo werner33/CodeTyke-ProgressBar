@@ -4,7 +4,7 @@ import Button from '../button/Button';
 
 import './Styles.scss';
 
-const LearningModule = ({setGameStatus}) => {
+const LearningModule = ({setGameStatus , setAddProgress, addProgress}) => {
   const [currentQuestionId, setCurrentQuestionId] = React.useState(0);
   const [quizData, setQuizData] = React.useState({});
   let currentQuestion = quizData.questionArr ? quizData.questionArr[currentQuestionId]: {};
@@ -26,10 +26,15 @@ const LearningModule = ({setGameStatus}) => {
   const handleSubmit=()=> {
     if(currentQuestionId < quizData.totalQuestions-1){
       setCurrentQuestionId(currentQuestionId+1);
+ 
     } else {
       setCurrentQuestionId(0);
-      setGameStatus({message: "Great Job! Play again.", loadIntro: true});
+      setTimeout(() => {
+        setGameStatus({message: "Great Job! Play again.", loadIntro: true});
+      }, "1000");
     }
+    setAddProgress(addProgress + 25)
+   
   }
   let possibleAnswers = [];
   if(currentQuestion.possibleAnswers){

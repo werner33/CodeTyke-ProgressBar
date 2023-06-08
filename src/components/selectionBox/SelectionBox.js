@@ -3,6 +3,7 @@ import React from 'react';
 import './Styles.scss';
 
 const SelectionBox = (props) => {
+  
   return(
     <div
       className="selectionBox"
